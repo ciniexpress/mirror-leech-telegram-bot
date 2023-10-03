@@ -75,6 +75,9 @@ Note: Doesn't work with torrents.
 <b>Direct link authorization</b>: -au -ap
 <code>/cmd</code> link -au username -ap password
 
+<b>Direct link custom headers</b>: -h
+<code>/cmd</code> link -h Key: value Key1: value1
+
 <b>Extract/Zip</b>: -e -z
 <code>/cmd</code> link -e password (extract password protected)
 <code>/cmd</code> link -z password (zip password protected)
@@ -176,7 +179,7 @@ CLONE_HELP_MESSAGE = """
 Send Gdrive|Gdot|Filepress|Filebee|Appdrive|Gdflix link or rclone path along with command or by replying to the link/rc_path by command.
 
 <b>Multi links only by replying to first gdlink or rclone_path:</b>
-<code>/cmd</code> -i 10(number of links/pathies)
+<code>/cmd</code> -i 10(number of links/paths)
 
 <b>Gdrive:</b>
 <code>/cmd</code> gdrivelink/gdl/gdrive_id -up gdl/gdrive_id/gd
@@ -185,4 +188,11 @@ Send Gdrive|Gdot|Filepress|Filebee|Appdrive|Gdflix link or rclone path along wit
 <code>/cmd</code> rcl/rclone_path -up rcl/rclone_path/rc -rcf flagkey:flagvalue|flagkey|flagkey:flagvalue
 
 Note: If -up not specified then rclone destination will be the RCLONE_PATH from config.env
+"""
+
+PASSWORD_ERROR_MESSAGE = """
+<b>This link requires a password!</b>
+- Insert <b>::</b> after the link and write the password after the sign.
+
+<b>Example:</b> link::my password
 """

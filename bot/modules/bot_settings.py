@@ -619,9 +619,13 @@ async def load_config():
         MEGA_EMAIL = ''
         MEGA_PASSWORD = ''
 
-    UPTOBOX_TOKEN = environ.get('UPTOBOX_TOKEN', '')
-    if len(UPTOBOX_TOKEN) == 0:
-        UPTOBOX_TOKEN = ''
+    FILELION_API = environ.get('FILELION_API', '')
+    if len(FILELION_API) == 0:
+        FILELION_API = ''
+
+    STREAMWISH_API = environ.get('STREAMWISH_API', '')
+    if len(STREAMWISH_API) == 0:
+        STREAMWISH_API = ''
 
     INDEX_URL = environ.get('INDEX_URL', '').rstrip("/")
     if len(INDEX_URL) == 0:
@@ -824,6 +828,7 @@ async def load_config():
                         'DOWNLOAD_DIR': DOWNLOAD_DIR,
                         'EQUAL_SPLITS': EQUAL_SPLITS,
                         'EXTENSION_FILTER': EXTENSION_FILTER,
+                        'FILELION_API': FILELION_API,
                         'GDRIVE_ID': GDRIVE_ID,
                         'INCOMPLETE_TASK_NOTIFIER': INCOMPLETE_TASK_NOTIFIER,
                         'INDEX_URL': INDEX_URL,
@@ -852,6 +857,7 @@ async def load_config():
                         'STATUS_LIMIT': STATUS_LIMIT,
                         'STATUS_UPDATE_INTERVAL': STATUS_UPDATE_INTERVAL,
                         'STOP_DUPLICATE': STOP_DUPLICATE,
+                        'STREAMWISH_API': STREAMWISH_API,
                         'SUDO_USERS': SUDO_USERS,
                         'TELEGRAM_API': TELEGRAM_API,
                         'TELEGRAM_HASH': TELEGRAM_HASH,
@@ -859,7 +865,6 @@ async def load_config():
                         'USER_LEECH': USER_LEECH,
                         'UPSTREAM_REPO': UPSTREAM_REPO,
                         'UPSTREAM_BRANCH': UPSTREAM_BRANCH,
-                        'UPTOBOX_TOKEN': UPTOBOX_TOKEN,
                         'USER_SESSION_STRING': USER_SESSION_STRING,
                         'USE_SERVICE_ACCOUNTS': USE_SERVICE_ACCOUNTS,
                         'WEB_PINCODE': WEB_PINCODE,

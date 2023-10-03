@@ -17,15 +17,11 @@ async def add_direct_download(details, path, listener, foldername):
         await sendMessage(listener.message, 'There is nothing to download!')
         return
     size = details['total_size']
-    if foldername:
-        path = f'{path}/{foldername}'
-    if len(contents) == 1:
-        if foldername:
-            contents[0]['filename'] = foldername
-        foldername = contents[0]['filename']
-        contents[0]['path'] = ''
+
     if not foldername:
         foldername = details['title']
+    path = f'{path}/{foldername}'
+
     msg, button = await stop_duplicate_check(foldername, listener)
     if msg:
         await sendMessage(listener.message, msg, button)
